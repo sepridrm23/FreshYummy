@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">FreshYummy</string>
+    <string name="text_about">Fresh Yummy adalah perusahaan yang menyediakan layanan pembelian sayur, lauk, dan kebutuhan dapur lainnya secara online guna memudahkan pengguna dalam memenuhi kebutuhan dapur.</string>
+    <string name="uri_facebook">https://www.facebook.com/freshyummyid/</string>
+    <string name="uri_instagram">https://www.instagram.com/freshyummyid/</string>
+    <string name="uri_twitter">https://twitter.com/freshyummyid/</string>
+    <string name="uri_play_store">https://play.google.com/store/apps/details?id=com.freshyummy.android</string>
+    <string name="uri_feedback">https://goo.gl/forms/BTq8YEvTNB1LuxoU2</string>
+    <string-array name="array_text_bank">
+        <item>Bank Central Asia</item>
+        <item>Bank Mandiri</item>
+        <item>Bank Negara Indonesia</item>
+        <item>Bank Rakyat Indonesia</item>
+        <item>Bank Tabungan Negara</item>
+        <item>Bank Bukopin</item>
+        <item>Bank Mega</item>
+    </string-array>
+    <string name="text_poin_info">Dapatkan 100 poin untuk setiap pembelanjaan kelipatan Rp 10.000</string>
+    <!--<string name="api_key">AIzaSyBhNYXrlHdW1gjAl8Yl1z4S1z-GJ2IJnDo</string>-->
+    <string name="facebook_app_id">201618490627905</string>
+    <string name="facebook_account_kit_client_token">943c79416e9e4f56a2dca93a703e766b</string>
+    <string name="fb_login_protocol_scheme">fb201618490627905</string>
+    <string name="title_activity_maps">Map</string>
+
+    <!--1777978712264230-->
+    <!--fb1777978712264230-->
+</resources>

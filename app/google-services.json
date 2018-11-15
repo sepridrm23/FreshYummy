@@ -1,0 +1,143 @@
+{
+  "project_info": {
+    "project_number": "432956250709",
+    "firebase_url": "https://fresh-yummy.firebaseio.com",
+    "project_id": "fresh-yummy",
+    "storage_bucket": "fresh-yummy.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:432956250709:android:48d7ff2d49d71caa",
+        "android_client_info": {
+          "package_name": "com.freshyummy.android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "432956250709-hkdu54p7611m4c5mjbsg632t74jm6gu0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.freshyummy.android",
+            "certificate_hash": "ebe3023540231e68221fc6b8ac0a33d3c5c48fc4"
+          }
+        },
+        {
+          "client_id": "432956250709-vmass5f3o3pcuggbvqguq38k8e0jbc68.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAWZ9tjdLqYrGn-nRktsVr45Xqs4MmpHUc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "432956250709-vmass5f3o3pcuggbvqguq38k8e0jbc68.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:432956250709:android:6dfff80ea864babb",
+        "android_client_info": {
+          "package_name": "com.freshyummy.driver"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "432956250709-418i4rdfioitovfo3u2kho3umrj5kd08.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.freshyummy.driver",
+            "certificate_hash": "ebe3023540231e68221fc6b8ac0a33d3c5c48fc4"
+          }
+        },
+        {
+          "client_id": "432956250709-vmass5f3o3pcuggbvqguq38k8e0jbc68.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAWZ9tjdLqYrGn-nRktsVr45Xqs4MmpHUc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "432956250709-vmass5f3o3pcuggbvqguq38k8e0jbc68.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:432956250709:android:9f00854d26ab48b5",
+        "android_client_info": {
+          "package_name": "com.freshyummy.yummyadmin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "432956250709-29324fh5o79uvc02mla7u622mdgb08mf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.freshyummy.yummyadmin",
+            "certificate_hash": "72a5b4be30b183603908245e8ccfe683e2746f35"
+          }
+        },
+        {
+          "client_id": "432956250709-vmass5f3o3pcuggbvqguq38k8e0jbc68.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAWZ9tjdLqYrGn-nRktsVr45Xqs4MmpHUc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "432956250709-vmass5f3o3pcuggbvqguq38k8e0jbc68.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

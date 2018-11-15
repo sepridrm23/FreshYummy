@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@color/colorPrimary"
+            android:padding="28dp">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:layout_gravity="center|bottom"
+                android:layout_marginBottom="4dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/fresh_yummy_logo" />
+
+        </FrameLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:overScrollMode="never"
+            android:scrollbarFadeDuration="1000">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="24dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="24dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tentang Fresh Yummy"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="@string/text_about" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Ikuti Kami"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/iv_app_info_facebook"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_margin="8dp"
+                        android:src="@drawable/ic_social_facebook" />
+
+                    <ImageView
+                        android:id="@+id/iv_app_info_instagram"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_margin="8dp"
+                        android:src="@drawable/ic_social_instagram" />
+
+                    <ImageView
+                        android:id="@+id/iv_app_info_twitter"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_margin="8dp"
+                        android:src="@drawable/ic_social_twitter" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/toolbar"
+        android:background="@android:color/white">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_marginEnd="10dp">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_action_navigation_arrow_back"
+                android:tint="@color/colorPrimary"
+                android:layout_centerVertical="true"
+                android:id="@+id/back"/>
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:id="@+id/iv_title"
+                android:src="@drawable/fresh_yummy"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"/>
+            <android.support.v7.widget.SearchView
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:id="@+id/search_view"
+                app:queryBackground="@android:color/transparent"
+                android:background="@drawable/custom_button"
+                app:queryHint="Cari di FreshYummy"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="40dp"
+                android:layout_marginStart="40dp" />
+        </RelativeLayout>
+    </android.support.v7.widget.Toolbar>
+
+    <RelativeLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bnv"
+        android:layout_below="@+id/toolbar"
+        android:background="@android:color/white">
+        <Spinner
+            android:id="@+id/sp_category"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimary"
+            android:background="@drawable/custom_button"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="3dp"/>
+
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/swipe"
+            android:layout_below="@+id/sp_category">
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler_product"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:overScrollMode="never"
+                android:background="@android:color/white"/>
+        </android.support.v4.widget.SwipeRefreshLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/rl3"
+            android:visibility="gone"
+            android:layout_below="@+id/sp_category">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:orientation="vertical"
+                android:gravity="center">
+                <ImageView
+                    android:layout_width="130dp"
+                    android:layout_height="130dp"
+                    android:src="@drawable/product_search"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Masukan nama barang yang Anda cari"
+                    android:textSize="13sp"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@android:color/darker_gray" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/rl"
+            android:visibility="gone"
+            android:layout_below="@+id/sp_category">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:orientation="vertical"
+                android:gravity="center">
+                <ImageView
+                    android:layout_width="130dp"
+                    android:layout_height="130dp"
+                    android:src="@drawable/nointernet"
+                    android:tint="@android:color/darker_gray"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tidak terhubung ke server"
+                    android:textSize="13sp"
+                    android:textColor="@android:color/darker_gray" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Coba lagi"
+                    android:id="@+id/tv_cobalagi"
+                    android:textColor="@color/colorOrange"
+                    android:paddingTop="7dp"
+                    android:paddingBottom="7dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:background="@drawable/custom_button_"
+                    android:layout_marginTop="20dp" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/rl2"
+            android:visibility="gone"
+            android:layout_below="@+id/sp_category">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:orientation="vertical"
+                android:gravity="center">
+                <ImageView
+                    android:layout_width="130dp"
+                    android:layout_height="130dp"
+                    android:src="@drawable/noresult"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tidak dapat menemukan pencarian"
+                    android:textSize="13sp"
+                    android:textColor="@android:color/darker_gray" />
+            </LinearLayout>
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <com.freshyummy.android.BottomNavigationViewEx
+        android:id="@+id/bnv"
+        android:layout_width="match_parent"
+        android:layout_height="47dp"
+        android:layout_alignParentBottom="true"
+        android:visibility="invisible"/>
+</RelativeLayout>

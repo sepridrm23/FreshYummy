@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/toolbar"
+        android:background="@android:color/white">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_marginEnd="10dp">
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:src="@drawable/fresh_yummy"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"/>
+        </RelativeLayout>
+    </android.support.v7.widget.Toolbar>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorBackground"
+        android:layout_below="@+id/toolbar"
+        android:layout_above="@+id/rl_cart_checkout">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_cart"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_cart_checkout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:layout_above="@+id/bnv">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorDivider" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/btn_cart_check_out"
+            android:layout_toStartOf="@+id/btn_cart_check_out"
+            android:orientation="vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="5dp"
+            android:paddingStart="10dp"
+            android:paddingEnd="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:textColor="@color/colorPrimary"
+                android:text="SubTotal"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tv_cart_sub_total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:textColor="@color/colorOrange"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_cart_check_out"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:text=" Checkout "
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="7dp"
+            android:textColor="@android:color/white"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:textAllCaps="false"
+            app:backgroundTint="@color/colorOrange"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/rl"
+        android:visibility="gone"
+        android:layout_below="@+id/toolbar"
+        android:layout_above="@+id/rl_cart_checkout">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/ic_shopping_cart_black_24dp"
+                android:tint="@android:color/darker_gray"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Belum ada barang"
+                android:textSize="13sp"
+                android:textColor="@android:color/darker_gray" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/rl2"
+        android:visibility="gone"
+        android:layout_below="@+id/toolbar"
+        android:layout_above="@+id/rl_cart_checkout">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ImageView
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:src="@drawable/nointernet"
+                android:tint="@android:color/darker_gray"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tidak terhubung ke server"
+                android:textSize="13sp"
+                android:textColor="@android:color/darker_gray" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Coba lagi"
+                android:id="@+id/tv_cobalagi"
+                android:textColor="@color/colorOrange"
+                android:paddingTop="7dp"
+                android:paddingBottom="7dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:background="@drawable/custom_button_"
+                android:layout_marginTop="20dp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <com.freshyummy.android.BottomNavigationViewEx
+        android:id="@+id/bnv"
+        android:layout_width="match_parent"
+        android:layout_height="47dp"
+        android:layout_alignParentBottom="true"
+        android:visibility="invisible"/>
+
+</RelativeLayout>

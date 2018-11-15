@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:layout_marginBottom="-30dp"
+        android:background="#1a9ea5">
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/ic_access_time_black_24dp"
+            android:backgroundTint="@android:color/white"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Masukan Jam Pengantaran"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:textSize="17sp"
+            android:layout_marginLeft="5dp"
+            android:textColor="@android:color/white"
+            android:layout_marginStart="5dp" />
+    </LinearLayout>
+    <picker.ugurtekbas.com.Picker.Picker
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/amPicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:hourFormat="true"
+        android:layout_margin="30dp"
+        app:canvasColor="@android:color/white"
+        app:textColor="@color/colorOrange"
+        app:dialColor="#1a9ea5"
+        app:clockColor="@android:color/darker_gray"
+        app:trackSize="5dp"
+        app:dialRadius="13dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:paddingLeft="10dp"
+        android:paddingBottom="10dp"
+        android:layout_marginTop="-30dp"
+        android:background="@android:color/white"
+        android:paddingStart="10dp"
+        tools:ignore="RtlSymmetry">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/cancle"
+            android:text="CANCEL"
+            android:textColor="#1a9ea5"
+            android:padding="10dp"
+            android:layout_marginRight="20dp"
+            android:textStyle="bold"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="OK"
+            android:id="@+id/ok"
+            android:textColor="#1a9ea5"
+            android:padding="10dp"
+            android:layout_marginRight="20dp"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+</LinearLayout>

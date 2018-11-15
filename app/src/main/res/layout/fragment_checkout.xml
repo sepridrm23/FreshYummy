@@ -1,0 +1,952 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground">
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/toolbar"
+        android:background="@android:color/white">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_marginEnd="10dp">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_action_navigation_arrow_back"
+                android:tint="@color/colorPrimary"
+                android:layout_centerVertical="true"
+                android:id="@+id/back"/>
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:src="@drawable/fresh_yummy"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"/>
+        </RelativeLayout>
+    </android.support.v7.widget.Toolbar>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_above="@+id/ll_add_cart"
+        android:layout_below="@+id/toolbar"
+        android:overScrollMode="never">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--<android.support.v7.widget.CardView-->
+                <!--android:id="@+id/cv_order_detail_address"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--card_view:cardUseCompatPadding="true"-->
+                <!--card_view:cardCornerRadius="5dp"-->
+                <!--android:background="@android:color/white">-->
+
+                <!--<View-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="1dp"-->
+                    <!--android:background="@color/colorDivider" />-->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@android:color/white">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_pin_drop_black_24dp"
+                            android:tint="@android:color/holo_green_dark"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:layout_weight="0.5"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="10dp"
+                            android:textStyle="bold"
+                            android:text="Alamat Pengantaran"
+                            android:layout_marginStart="10dp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent"
+                            android:text="UBAH"
+                            android:id="@+id/tv_change_address"
+                            android:gravity="center_vertical"
+                            android:textAlignment="textEnd"
+                            android:textColor="@color/colorPrimary"
+                            tools:ignore="RtlCompat" />
+
+                    </LinearLayout>
+
+                    <!--<ImageView-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="5dp"-->
+                        <!--android:src="@drawable/line_amplop"-->
+                        <!--android:scaleType="fitXY"/>-->
+                    <!--<View-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="1dp"-->
+                        <!--android:background="@color/colorDivider" />-->
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginStart="30dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_delivery_address_full_address"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Silahkan masukan alamat pengantaran"/>
+                    </LinearLayout>
+
+                    <!--<View-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="1dp"-->
+                        <!--android:background="@color/colorDivider" />-->
+
+                    <LinearLayout
+                        android:id="@+id/ll_order_detail_address_note"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <!--<View-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="1dp"-->
+                            <!--android:background="@color/colorDivider" />-->
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp"
+                            android:layout_marginLeft="20dp"
+                            android:orientation="horizontal"
+                            android:layout_marginStart="20dp">
+                            <ImageView
+                                android:layout_width="23dp"
+                                android:layout_height="23dp"
+                                android:layout_gravity="center"
+                                android:tint="@android:color/darker_gray"
+                                android:src="@drawable/ic_description_black_24dp"/>
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:layout_gravity="center"
+                                android:id="@+id/et_address_note"
+                                android:textSize="13dp"
+                                android:hint="Tambahkan catatan alamat"
+                                android:padding="5dp"
+                                android:paddingLeft="10dp"
+                                android:background="@drawable/custom_button"
+                                android:textColor="@android:color/darker_gray"
+                                android:paddingStart="10dp"
+                                tools:ignore="RtlSymmetry" />
+                        </LinearLayout>
+
+                        <!--<LinearLayout-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:padding="10dp"-->
+                            <!--android:orientation="horizontal">-->
+                            <!--<ImageView-->
+                                <!--android:layout_width="23dp"-->
+                                <!--android:layout_height="23dp"-->
+                                <!--android:layout_gravity="center"-->
+                                <!--android:tint="@android:color/darker_gray"-->
+                                <!--android:src="@drawable/ic_person_black_24dp"/>-->
+                            <!--<EditText-->
+                                <!--android:layout_width="match_parent"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:layout_marginLeft="5dp"-->
+                                <!--android:layout_gravity="center"-->
+                                <!--android:textSize="13dp"-->
+                                <!--android:hint="Tambahkan nama penerima"-->
+                                <!--android:background="@android:color/transparent"-->
+                                <!--android:textColor="@android:color/darker_gray"/>-->
+                        <!--</LinearLayout>-->
+
+                        <!--<View-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="1dp"-->
+                            <!--android:background="@color/colorDivider" />-->
+
+                    </LinearLayout>
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="5dp"
+                        android:src="@drawable/line"
+                        android:scaleType="fitXY" />
+                </LinearLayout>
+            <!--</android.support.v7.widget.CardView>-->
+
+            <!--<android.support.v7.widget.CardView-->
+                <!--android:id="@+id/cv_order_detail_product"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--card_view:cardUseCompatPadding="true"-->
+                <!--card_view:cardCornerRadius="5dp"-->
+                <!--android:background="@android:color/white">-->
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/colorDivider" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@android:color/white">
+
+                    <!--<View-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="1dp"-->
+                        <!--android:background="@color/colorDivider" />-->
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_local_mall_black_24dp"
+                            android:tint="@android:color/holo_green_dark"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Pesanan Anda"
+                            android:textStyle="bold"
+                            android:layout_marginLeft="10dp"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="10dp" />
+
+                    </LinearLayout>
+
+                    <!--<View-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="1dp"-->
+                        <!--android:background="@color/colorDivider" />-->
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/rv_order_detail_product"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginStart="30dp"
+                        android:overScrollMode="never" />
+
+                    <LinearLayout
+                        android:id="@+id/ll_order_detail_item_note"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <!--<View-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="1dp"-->
+                            <!--android:background="@color/colorDivider" />-->
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp"
+                            android:layout_marginLeft="20dp"
+                            android:orientation="horizontal">
+                            <ImageView
+                                android:layout_width="23dp"
+                                android:layout_height="23dp"
+                                android:layout_gravity="center"
+                                android:tint="@android:color/darker_gray"
+                                android:src="@drawable/ic_description_black_24dp"/>
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:layout_gravity="center"
+                                android:textSize="13dp"
+                                android:id="@+id/et_product_note"
+                                android:hint="Tambahkan catatan barang"
+                                android:background="@drawable/custom_button"
+                                android:padding="5dp"
+                                android:paddingLeft="10dp"
+                                android:textColor="@android:color/darker_gray"
+                                android:layout_marginStart="5dp"
+                                android:paddingStart="10dp"
+                                tools:ignore="RtlSymmetry" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!--<View-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="1dp"-->
+                        <!--android:background="@color/colorDivider" />-->
+
+                </LinearLayout>
+            <!--</android.support.v7.widget.CardView>-->
+            <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorDivider" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/colorDivider" />
+            <!--<android.support.v7.widget.CardView-->
+                <!--android:id="@+id/cv_purchase_confirmation_order_time"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--card_view:cardUseCompatPadding="true"-->
+                <!--card_view:cardCornerRadius="5dp"-->
+                <!--android:background="@android:color/white">-->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@android:color/white">
+
+                    <!--<View-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="1dp"-->
+                        <!--android:background="@color/colorDivider" />-->
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_access_time_black_24dp"
+                            android:tint="@android:color/holo_green_dark"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Waktu Pengantaran"
+                            android:textStyle="bold"
+                            android:layout_marginLeft="10dp"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="10dp" />
+
+                    </LinearLayout>
+
+                    <!--<View-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="1dp"-->
+                        <!--android:background="@color/colorDivider" />-->
+
+                    <LinearLayout
+                        android:id="@+id/ll_purchase_confirmation_order_date_time"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingBottom="10dp">
+
+                        <LinearLayout
+                            android:id="@+id/ll_purchase_confirmation_order_date"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="?attr/selectableItemBackground"
+                            android:orientation="vertical"
+                            android:paddingBottom="8dp"
+                            android:paddingTop="8dp">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_gravity="center">
+
+                                <ImageView
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:src="@drawable/ic_date_range_black_24dp"
+                                    android:tint="@android:color/holo_green_dark"/>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Tanggal"
+                                    android:layout_gravity="center_vertical" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/tv_purchase_confirmation_order_date"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="16sp"
+                                android:text="Tekan untuk ubah" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:background="@color/colorDivider" />
+
+                        <LinearLayout
+                            android:id="@+id/ll_purchase_confirmation_order_time"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="?attr/selectableItemBackground"
+                            android:orientation="vertical"
+                            android:paddingBottom="8dp"
+                            android:paddingTop="8dp">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_gravity="center">
+
+                                <ImageView
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:src="@drawable/ic_access_time_black_24dp"
+                                    android:tint="@android:color/holo_green_dark"/>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Jam"
+                                    android:layout_gravity="center_vertical" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/tv_purchase_confirmation_order_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="16sp"
+                                android:text="Tekan untuk ubah" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!--<View-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="1dp"-->
+                        <!--android:background="@color/colorDivider" />-->
+
+                </LinearLayout>
+            <!--</android.support.v7.widget.CardView>-->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorDivider" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/colorDivider" />
+            <!--<android.support.v7.widget.CardView-->
+                <!--android:id="@+id/cv_order_detail_payment_type"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--card_view:cardUseCompatPadding="true"-->
+                <!--card_view:cardCornerRadius="5dp"-->
+                <!--android:background="@android:color/white">-->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@android:color/white">
+
+                    <!--<View-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="1dp"-->
+                        <!--android:background="@color/colorDivider" />-->
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_local_atm_black_24dp"
+                            android:tint="@android:color/holo_green_dark"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Cara Pembayaran"
+                            android:textStyle="bold"
+                            android:layout_marginLeft="10dp"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="10dp" />
+                    </LinearLayout>
+
+                    <!--<View-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="1dp"-->
+                        <!--android:background="@color/colorDivider" />-->
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <RadioGroup
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="16dp"
+                            android:layout_marginStart="16dp"
+                            android:orientation="vertical">
+
+                            <RadioButton
+                                android:id="@+id/rb_purchase_confirmation_payment_type_cod"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Tunai" />
+
+                            <RadioButton
+                                android:id="@+id/rb_purchase_confirmation_payment_type_transfer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="5dp"
+                                android:layout_marginTop="5dp"
+                                android:text="Transfer" />
+
+                            <android.support.v7.widget.RecyclerView
+                                android:id="@+id/rv_transfer_detail"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="30dp"
+                                android:visibility="gone"
+                                android:layout_marginStart="30dp" />
+                        </RadioGroup>
+                    </LinearLayout>
+
+                    <!--<View-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="1dp"-->
+                        <!--android:background="@color/colorDivider" />-->
+
+                </LinearLayout>
+            <!--</android.support.v7.widget.CardView>-->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorDivider" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/colorDivider" />
+            <!--<android.support.v7.widget.CardView-->
+                <!--android:id="@+id/cv_order_detail_payment_detail"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--card_view:cardUseCompatPadding="true"-->
+                <!--card_view:cardCornerRadius="5dp"-->
+                <!--android:background="@android:color/white">-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@android:color/white">
+
+                <!--<View-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="1dp"-->
+                <!--android:background="@color/colorDivider" />-->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_monetization_on_black_24dp"
+                        android:tint="@color/colorOrange"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginStart="10dp"
+                        android:text="Poin Yummy"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+
+                <!--<View-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="1dp"-->
+                <!--android:background="@color/colorDivider" />-->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="30dp"
+                    android:paddingRight="16dp"
+                    android:orientation="vertical"
+                    android:paddingStart="30dp"
+                    android:paddingEnd="16dp"
+                    android:paddingBottom="10dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/tv1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Gunakan "
+                            android:layout_centerVertical="true"/>
+
+                        <TextView
+                            android:id="@+id/tv_poin"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toEndOf="@+id/tv1"
+                            android:layout_centerVertical="true"
+                            android:layout_toRightOf="@+id/tv1"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toEndOf="@+id/tv_poin"
+                            android:layout_toRightOf="@+id/tv_poin"
+                            android:layout_centerVertical="true"
+                            android:text=" Poin" />
+
+                        <Switch
+                            android:id="@+id/sw_poin"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentRight="true"
+                            android:text="0" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Poin Yummy Didapat" />
+
+                        <TextView
+                            android:id="@+id/tv_poin_get"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toLeftOf="@+id/tv2"
+                            android:layout_toStartOf="@+id/tv2"
+                            android:text="0" />
+
+                        <TextView
+                            android:id="@+id/tv2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentRight="true"
+                            android:text=" Poin" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorDivider" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/colorDivider" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@android:color/white">
+
+                <!--<View-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="1dp"-->
+                <!--android:background="@color/colorDivider" />-->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_local_offer_black_24dp"
+                        android:tint="@android:color/holo_green_dark"
+                        android:layout_gravity="center_vertical"/>
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginStart="10dp"
+                        android:padding="5dp"
+                        android:paddingLeft="10dp"
+                        android:textSize="15sp"
+                        android:id="@+id/et_kode_promo"
+                        android:background="@drawable/custom_button"
+                        android:hint="Silahkan masukan kode promo"
+                        android:textColor="@color/colorOrange"
+                        android:paddingStart="10dp"
+                        tools:ignore="RtlSymmetry" />
+                </LinearLayout>
+
+                <!--<View-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="1dp"-->
+                <!--android:background="@color/colorDivider" />-->
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorDivider" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/colorDivider" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@android:color/white">
+
+                <!--<View-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="1dp"-->
+                    <!--android:background="@color/colorDivider" />-->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_payment_black_24dp"
+                        android:layout_gravity="center_vertical"
+                        android:tint="@android:color/holo_green_dark"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Detail Pembayaran"
+                        android:textStyle="bold"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginStart="10dp" />
+                </LinearLayout>
+
+                <!--<View-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="1dp"-->
+                    <!--android:background="@color/colorDivider" />-->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="30dp"
+                    android:paddingRight="16dp"
+                    android:orientation="vertical"
+                    android:paddingStart="30dp"
+                    android:paddingBottom="10dp"
+                    android:paddingEnd="16dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Subtotal Produk" />
+
+                        <TextView
+                            android:id="@+id/tv_order_detail_payment_amount_subtotal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentRight="true"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Biaya Antar" />
+
+                        <TextView
+                            android:id="@+id/tv_order_detail_payment_amount_delivery"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentRight="true"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        android:id="@+id/rl_promo"
+                        android:layout_marginTop="5dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Gunakan Promo "
+                            android:id="@+id/tv_promo_title"/>
+
+                        <TextView
+                            android:id="@+id/tv_promo_nominal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentRight="true" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Total Biaya"
+                            android:textStyle="bold"/>
+
+                        <TextView
+                            android:id="@+id/tv_order_detail_payment_amount_discount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toLeftOf="@+id/tv_order_detail_payment_amount"
+                            android:layout_toStartOf="@+id/tv_order_detail_payment_amount" />
+
+                        <TextView
+                            android:id="@+id/tv_order_detail_payment_amount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentRight="true"
+                            android:textColor="@color/colorOrange"/>
+                    </RelativeLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <!--</android.support.v7.widget.CardView>-->
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/bnv"
+        android:orientation="vertical"
+        android:id="@+id/ll_add_cart">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorDivider"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="11dp"
+            android:gravity="center"
+            android:background="@color/colorPrimary">
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/ic_local_mall_black_24dp"
+                android:tint="@android:color/white"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Buat Pesan"
+                android:layout_marginLeft="5dp"
+                android:textColor="@android:color/white"
+                android:layout_marginStart="5dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <com.freshyummy.android.BottomNavigationViewEx
+        android:id="@+id/bnv"
+        android:layout_width="match_parent"
+        android:layout_height="47dp"
+        android:layout_alignParentBottom="true"
+        android:visibility="invisible"/>
+
+</RelativeLayout>

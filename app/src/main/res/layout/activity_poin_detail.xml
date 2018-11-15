@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        app:elevation="0dp">
+
+        <android.support.v7.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/toolbar"
+            android:background="@color/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_marginEnd="10dp">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_action_navigation_arrow_back"
+                    android:tint="@android:color/white"
+                    android:layout_centerVertical="true"
+                    android:id="@+id/back"/>
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/fresh_yummy"
+                    android:tint="@android:color/white"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"/>
+            </RelativeLayout>
+        </android.support.v7.widget.Toolbar>
+
+        <!--<android.support.design.widget.TabLayout
+            android:id="@+id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-16dp" />-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_gravity="center"
+                android:layout_margin="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/ic_monetization_on_black_24dp"
+                android:backgroundTint="@color/colorOrange"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:orientation="vertical"
+                android:paddingBottom="10dp">
+
+                <TextView
+                    android:id="@+id/tv_point_detail_current"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/white"
+                    android:textSize="24sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/text_poin_info"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:tabMode="fixed"
+            app:tabGravity="fill"/>
+
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="32dp"-->
+            <!--android:layout_marginBottom="4dp"-->
+            <!--android:layout_marginLeft="16dp"-->
+            <!--android:layout_marginRight="16dp"-->
+            <!--android:layout_marginTop="4dp">-->
+
+            <!--<Button-->
+                <!--android:id="@+id/btn_point_all"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_weight="1"-->
+                <!--android:background="@drawable/custom_button"-->
+                <!--android:text="Semua Histori"-->
+                <!--android:textAllCaps="false"-->
+                <!--android:textColor="@color/colorDivider"-->
+                <!--android:textSize="13sp" />-->
+
+            <!--<Button-->
+                <!--android:id="@+id/btn_point_get"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_weight="1"-->
+                <!--android:background="@drawable/custom_button"-->
+                <!--android:text="Penghasilan"-->
+                <!--android:textAllCaps="false"-->
+                <!--android:textColor="@color/colorDivider"-->
+                <!--android:textSize="13sp" />-->
+
+            <!--<Button-->
+                <!--android:id="@+id/btn_point_used"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_weight="1"-->
+                <!--android:background="@drawable/custom_button"-->
+                <!--android:text="Pembelanjaan"-->
+                <!--android:textAllCaps="false"-->
+                <!--android:textColor="@color/colorDivider"-->
+                <!--android:textSize="13sp" />-->
+        <!--</LinearLayout>-->
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="3"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <android.support.v4.view.ViewPager
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never" />
+    </android.support.design.widget.CoordinatorLayout>
+</android.support.design.widget.CoordinatorLayout>

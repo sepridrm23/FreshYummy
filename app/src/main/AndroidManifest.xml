@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.freshyummy.android">
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_icon"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/ic_icon"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyBhNYXrlHdW1gjAl8Yl1z4S1z-GJ2IJnDo" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <!--<meta-data-->
+            <!--android:name="com.google.android.maps.v1.API_KEY"-->
+            <!--android:value="@string/api_key" />-->
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+        <meta-data
+            android:name="com.facebook.accountkit.ApplicationName"
+            android:value="@string/app_name" />
+        <meta-data
+            android:name="com.facebook.accountkit.ClientToken"
+            android:value="@string/facebook_account_kit_client_token" />
+
+        <service android:name=".MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <activity android:name="com.facebook.accountkit.ui.AccountKitActivity" />
+        <activity android:name=".SplashScreenActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".DetailBelanjaanActivity" />
+        <activity android:name=".SignInActivity" />
+        <activity android:name=".SignUpActivity" />
+        <activity android:name=".VerifyPhoneActivity" />
+        <activity android:name=".TransferActivity" />
+        <activity android:name=".ChangeAccountActivity" />
+        <activity android:name=".PoinDetailActivity" />
+        <activity android:name=".SignUpFBActivity" />
+        <activity android:name=".PrivacyPolicyActivity" />
+        <activity android:name=".VerifyEmailActivity" />
+        <activity android:name=".TrackingActivity" />
+    </application>
+
+</manifest>

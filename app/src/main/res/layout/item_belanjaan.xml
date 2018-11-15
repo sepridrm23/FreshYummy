@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<android.support.v7.widget.CardView-->
+    <!--xmlns:card_view="http://schemas.android.com/apk/res-auto"-->
+    <!--xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--android:id="@+id/card_view"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--card_view:cardUseCompatPadding="true"-->
+    <!--card_view:cardCornerRadius="4dp"-->
+    <!--android:layout_marginTop="4dp"-->
+    <!--android:background="@android:color/white">-->
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp">
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:id="@+id/devid"
+        android:background="@color/colorBackground"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:orientation="vertical"
+        android:id="@+id/ll"
+        android:layout_below="@+id/devid"
+        tools:ignore="UselessParent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/ic_local_mall_black_24dp"
+                android:tint="@color/colorPrimary"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_gravity="center"
+                android:textStyle="bold"
+                android:id="@+id/tv_item_order_history_last_status"
+                android:layout_marginStart="5dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_gravity="center"
+                android:textAlignment="viewEnd"
+                android:id="@+id/tv_item_order_history_date"
+                android:layout_marginStart="5dp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorDivider"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:paddingBottom="5dp">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="80dp"
+                android:layout_height="90dp"
+                card_view:cardElevation="0dp"
+                card_view:cardUseCompatPadding="true"
+                card_view:cardCornerRadius="8dp"
+                android:id="@+id/card_belanjaan"
+                android:background="@android:color/white">
+                <ImageView
+                    android:id="@+id/iv_belanjaan"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true" />
+            </android.support.v7.widget.CardView>
+            <TextView
+                android:id="@+id/tv_belanjaan_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimary"
+                android:layout_toRightOf="@+id/card_belanjaan"
+                android:layout_toEndOf="@+id/card_belanjaan"
+                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_belanjaan_quantity"
+                android:layout_toRightOf="@+id/card_belanjaan"
+                android:layout_toEndOf="@+id/card_belanjaan"
+                android:layout_below="@+id/tv_belanjaan_name"
+                android:layout_marginTop="3dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_belanjaan_price_unit"
+                android:textColor="@color/colorOrange"
+                android:layout_below="@+id/tv_belanjaan_quantity"
+                android:layout_toRightOf="@+id/card_belanjaan"
+                android:layout_toEndOf="@+id/card_belanjaan"
+                android:layout_marginTop="3dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tampilkan lainnya..."
+                android:layout_marginBottom="5dp"
+                android:layout_below="@+id/tv_belanjaan_price_unit"
+                android:layout_alignParentEnd="true"
+                android:textColor="@android:color/darker_gray"
+                android:layout_marginTop="3dp"
+                android:layout_alignParentRight="true" />
+        </RelativeLayout>
+
+        <!--<View-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="1dp"-->
+            <!--android:background="@color/colorDivider"/>-->
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorDivider" />
+
+        <RelativeLayout
+            android:id="@+id/rl_item_order_history_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/tv_item_order_history_unit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/tv_item_order_history_price"
+                android:textStyle="bold"
+                android:text="Total Pembayaran: "
+                android:gravity="end"
+                android:layout_toStartOf="@+id/tv_item_order_history_price" />
+
+            <TextView
+                android:id="@+id/tv_item_order_history_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:textStyle="bold"
+                android:textColor="@color/colorOrange"
+                android:gravity="end" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <!--<View-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="1dp"-->
+        <!--android:background="@color/colorDivider"-->
+        <!--android:layout_below="@+id/ll"-->
+        <!--android:layout_marginBottom="10dp"/>-->
+</RelativeLayout>
+<!--</android.support.v7.widget.CardView>-->

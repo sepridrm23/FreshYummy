@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#509030</color>
+    <color name="colorPrimaryDark">#408020</color>
+    <color name="colorAccent">#1a9ea5</color>
+    <color name="colorOrange">#ff6040</color>
+    <color name="colorDivider">#EEEEEE</color>
+    <color name="colorButton">#009900</color>
+    <color name="colorBackground">#F5F5F5</color>
+    <color name="colorFacebook">#3b5998</color>
+
+</resources>

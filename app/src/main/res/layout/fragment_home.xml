@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/toolbar"
+        android:background="@android:color/white">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_marginEnd="10dp">
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:id="@+id/iv_title"
+                android:src="@drawable/fresh_yummy"
+                android:layout_centerVertical="true"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/iv_title"
+                android:layout_toEndOf="@+id/iv_title"
+                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_centerVertical="true"
+                android:padding="5dp"
+                android:id="@+id/search_view"
+                android:background="@drawable/custom_button">
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/places_ic_search"
+                    android:layout_marginRight="5dp"
+                    android:id="@+id/iv"
+                    android:tint="@android:color/darker_gray"
+                    android:layout_marginEnd="5dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cari di FreshYummy"
+                    android:layout_toLeftOf="@id/iv"
+                    android:layout_centerVertical="true"
+                    android:layout_toStartOf="@id/iv"
+                    android:layout_marginRight="5dp"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_marginEnd="5dp" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </android.support.v7.widget.Toolbar>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bnv"
+        android:layout_below="@+id/toolbar">
+
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/swipe">
+            <android.support.v4.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:overScrollMode="never"
+                android:background="@android:color/white">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <com.daimajia.slider.library.SliderLayout
+                        android:id="@+id/slider"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <!--<View-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="15dp"-->
+                        <!--android:layout_marginTop="10dp"-->
+                        <!--android:background="@color/colorBackground"/>-->
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="15dp"
+                        android:textColor="@color/colorAccent"
+                        android:text="KATEGORI"
+                        android:textStyle="bold"
+                        android:layout_marginStart="15dp" />
+
+                    <!--<View-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="1dp"-->
+                        <!--android:layout_marginTop="10dp"-->
+                        <!--android:background="@color/colorDivider"/>-->
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/recycler_view_category"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:scrollbars="vertical"
+                        android:padding="5dp"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@color/colorBackground"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="15dp"
+                        android:textColor="@color/colorAccent"
+                        android:text="SEDANG DISKON"
+                        android:textStyle="bold"
+                        android:layout_marginStart="15dp" />
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/recycler_view_discount"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:overScrollMode="never"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@color/colorBackground"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="15dp"
+                        android:text="BARU RILIS"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorAccent"
+                        android:layout_marginStart="15dp" />
+
+                    <!--<View-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="1dp"-->
+                        <!--android:layout_marginTop="10dp"-->
+                        <!--android:background="@color/colorDivider"/>-->
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/recycler_view_newest"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:overScrollMode="never"/>
+                </LinearLayout>
+            </android.support.v4.widget.NestedScrollView>
+        </android.support.v4.widget.SwipeRefreshLayout>
+    </LinearLayout>
+
+    <com.freshyummy.android.BottomNavigationViewEx
+        android:id="@+id/bnv"
+        android:layout_width="match_parent"
+        android:layout_height="47dp"
+        android:layout_alignParentBottom="true"
+        android:visibility="invisible"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/rl"
+        android:background="@color/colorBackground"
+        android:visibility="gone"
+        android:layout_below="@+id/toolbar"
+        android:layout_above="@+id/bnv">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ImageView
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:src="@drawable/nointernet"
+                android:tint="@android:color/darker_gray"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tidak terhubung ke server"
+                android:textSize="13sp"
+                android:textColor="@android:color/darker_gray" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Coba lagi"
+                android:id="@+id/tv_cobalagi"
+                android:textColor="@color/colorOrange"
+                android:paddingTop="7dp"
+                android:paddingBottom="7dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:background="@drawable/custom_button_"
+                android:layout_marginTop="20dp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar"
+        android:layout_above="@+id/bnv"
+        android:id="@+id/cover"
+        android:background="@android:color/white"
+        android:orientation="horizontal">
+    </LinearLayout>
+
+</RelativeLayout>

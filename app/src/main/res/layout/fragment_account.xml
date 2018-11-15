@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorBackground">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bnv">
+
+        <android.support.v7.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/toolbar"
+            android:background="@android:color/white">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_marginEnd="10dp">
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/fresh_yummy"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"/>
+            </RelativeLayout>
+        </android.support.v7.widget.Toolbar>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorAccent"
+                    android:padding="10dp"
+                    android:id="@+id/tv_verify"
+                    android:text="Tekan untuk verifikasi email anda"
+                    android:textAlignment="center" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp"
+                    android:id="@+id/ll_account_data"
+                    android:background="@android:color/white">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tv_account_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:maxLines="1"
+                            android:layout_weight="0.3"
+                            android:textStyle="bold"
+                            android:textSize="17sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="UBAH"
+                            android:layout_weight="1"
+                            android:id="@+id/tv_account_change"
+                            android:textAlignment="textEnd"
+                            android:textColor="@color/colorAccent"
+                            android:gravity="end" />
+                    </LinearLayout>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tv_account_email"
+                        android:textSize="13sp"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tv_account_phone"
+                        android:layout_marginTop="5dp"
+                        android:textSize="13sp"/>
+                </LinearLayout>
+
+                <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:orientation="horizontal"-->
+                <!--android:padding="20dp"-->
+                <!--android:layout_marginTop="10dp"-->
+                <!--android:background="@android:color/white"-->
+                <!--android:id="@+id/ll_address">-->
+                <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Alamat Saya"/>-->
+                <!--</LinearLayout>-->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@android:color/white"
+                    android:id="@+id/ll_poin">
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:tint="@color/colorOrange"
+                        android:src="@drawable/ic_monetization_on_black_24dp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="POIN YUMMY"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginStart="20dp" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tv_account_poin"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/colorAccent"
+                        android:layout_gravity="center" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@android:color/white"
+                    android:id="@+id/ll_fb">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tekan tombol dibawah untuk menghubungkan dengan Facebook"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginStart="20dp" />
+                    <Button
+                        android:id="@+id/button2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:drawableLeft="@drawable/fb"
+                        android:text="Hubungkan dengan Facebook"
+                        android:textAllCaps="false"
+                        android:textColor="@android:color/white"
+                        app:backgroundTint="#0021ac"
+                        android:drawableStart="@drawable/fb" />
+                    <com.facebook.login.widget.LoginButton
+                        android:id="@+id/login_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="10dp"
+                    android:id="@+id/ll_privacy"
+                    android:layout_marginTop="10dp"
+                    android:background="@android:color/white">
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:tint="@android:color/darker_gray"
+                        android:src="@drawable/ic_description_black_24dp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="Kebijakan Privacy"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginStart="20dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="10dp"
+                    android:id="@+id/ll_nilai"
+                    android:layout_marginTop="1dp"
+                    android:background="@android:color/white">
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:tint="@android:color/darker_gray"
+                        android:src="@drawable/ic_star_black_24dp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="Nilai Aplikasi"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginStart="20dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="10dp"
+                    android:id="@+id/ll_kritik"
+                    android:layout_marginTop="1dp"
+                    android:background="@android:color/white">
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:tint="@android:color/darker_gray"
+                        android:src="@drawable/ic_info_black_24dp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="Kritik dan Masukan"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginStart="20dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="10dp"
+                    android:id="@+id/ll_tentang"
+                    android:layout_marginTop="1dp"
+                    android:background="@android:color/white">
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:tint="@android:color/darker_gray"
+                        android:src="@drawable/ic_perm_device_information_black_24dp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="Tentang Aplikasi"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginStart="20dp" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/white"
+                    android:padding="15dp"
+                    android:text="KELUAR"
+                    android:id="@+id/tv_in_out"
+                    android:textColor="@color/colorAccent"
+                    android:textAlignment="center"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"/>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+    <com.freshyummy.android.BottomNavigationViewEx
+        android:id="@+id/bnv"
+        android:layout_width="match_parent"
+        android:layout_height="47dp"
+        android:layout_alignParentBottom="true"
+        android:visibility="invisible"/>
+</RelativeLayout>
